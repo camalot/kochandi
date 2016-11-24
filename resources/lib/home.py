@@ -22,5 +22,5 @@ class Main:
                                                                              urllib.quote_plus(b["board"]),
                                                                              b["pages"]))
 
-        control.directory_end()
+        control.directory_end(force_thumb=False)
         return

@@ -21,15 +21,15 @@ class Main:
         threads = utils.get_board(self.board, self.page)["threads"]
         for t in threads:
             post = t["posts"][0]
-            if post["images"] <= 0:
+            if int(post["images"]) <= 0:
                 continue
 
             if hasattr(post, "sub"):
-                title = "%s | %s" % (post["sub"], 0)
+                title = "%s | images: %s" % (post["sub"], post["images"])
             elif hasattr(post, "com"):
-                title = "%s | %s" % (post["com"], 0)
+                title = "%s | images:  %s" % (post["com"], post["images"])
             else:
-                title = "%s | %s" % (post["filename"], 0)
+                title = "%s | images: %s" % (post["filename"], post["images"])
             icon = utils.get_thumb_url(self.board, post["tim"])
             utils.add_directory(title, icon, icon,
                                 "%s?action=thread&board=%s&id=%s" % (sys.argv[0], urllib.quote_plus(self.board),
