@@ -40,8 +40,5 @@ class Main:
             utils.add_next_page("%s?action=%s&page=%s&total_pages=%s&board=%s" % (sys.argv[0], self.action,
                                                                                   next_page, self.totalPages,
                                                                                   self.board), next_page)
-        utils.add_directory(utils.text_green % control.lang(30502), utils.icon_settings, None,
-                            "%s?action=settings" % (sys.argv[0]))
-
         control.directory_end()
         return

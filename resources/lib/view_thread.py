@@ -31,10 +31,5 @@ class Main:
                 vid_url = utils.get_image_url(self.board, p["tim"], p["ext"])
                 utils.add_video(p['filename'], thumb, vid_url)
 
-
-
-        utils.add_directory(utils.text_green % control.lang(30502), utils.icon_settings, None,
-                            "%s?action=settings" % (sys.argv[0]))
-
         control.directory_end()
         return

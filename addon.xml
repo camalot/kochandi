@@ -6,7 +6,7 @@
 	</requires>
 
 	<extension point="xbmc.python.pluginsource" library="addon.py">
-		<provides>image video</provides>
+		<provides>image video executable</provides>
 	</extension>
 
 	<extension point="xbmc.addon.metadata">

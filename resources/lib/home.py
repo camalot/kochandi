@@ -17,7 +17,7 @@ class Main:
             if not nsfw and (b["ws_board"] == 0):
                 continue
             title = "/%s/ (%s)" % (b["board"], b["title"])
-            utils.add_directory(title, None, None,
+            utils.add_directory(title, utils.icon_board, utils.icon_board,
                                 "%s?action=board&board=%s&total_pages=%s" % (sys.argv[0],
                                                                              urllib.quote_plus(b["board"]),
                                                                              b["pages"]))

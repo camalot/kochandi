@@ -27,6 +27,7 @@ icon_folder = os.path.join(control.imagesPath, "folder.png")
 icon_search = os.path.join(control.imagesPath, "search.png")
 icon_next = os.path.join(control.imagesPath, "next-page.png")
 icon_settings = os.path.join(control.imagesPath, "settings.png")
+icon_board = os.path.join(control.imagesPath, "board.png")
 
 image_ext = [".jpg", ".jpeg", ".png", ".bmp", ".webp"]
 
@@ -44,14 +45,17 @@ def add_video(title, thumbnail, video_url):
     list_item = control.item(title, iconImage="DefaultVideo.png", thumbnailImage=thumbnail)
     list_item.setInfo("video", {"Title": title, "Studio": "4Chan"})
     list_item.setProperty("ListItem.IsResumable", "true")
+    list_item.setProperty("Playlist.Repeat", "Repeat One")
     list_item.setArt({"thumb": thumbnail, "fanart": thumbnail, "landscape": thumbnail, "poster": thumbnail})
     plugin_play_url = '%s?action=play&video_url=%s' % (sys.argv[0], urllib.quote_plus(video_url))
     control.addItem(handle=int(sys.argv[1]), url=plugin_play_url, listitem=list_item, isFolder=False)
 
 
 def add_image(title, thumbnail, image_url):
-    list_item = control.item(title, iconImage="DefaultImage.png", thumbnailImage=thumbnail)
-    list_item.setArt({"thumb": thumbnail})
+    list_item = control.item(title, iconImage="DefaultPicture.png", thumbnailImage=thumbnail, path=image_url)
+    list_item.setProperty(u'fanart_image', image_url)
+    # list_item.setInfo(type=u'picture', infoLabels={"Title": title})
+    # list_item.setProperty(u'IsPlayable', u'true')
     # plugin_play_url = '%s?action=view&image_url=%s' % (sys.argv[0], urllib.quote_plus(image_url))
     control.addItem(handle=int(sys.argv[1]), url=image_url, listitem=list_item, isFolder=False)
 
