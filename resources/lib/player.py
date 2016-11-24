@@ -16,20 +16,22 @@ class player(xbmc.Player):
         self.dbid = 0
 
     def view(self, meta):
-        # if control.window.getProperty('PseudoTVRunning') == 'True':
-        #    return control.player.play(url, control.item(path=url))
 
         self.getVideoInfo(meta)
         if meta["thumb"] is None:
-            meta["thumb"] = "DefaultVideo.png"
+            meta["thumb"] = "DefaultPicture.png"
         item = control.item(path=meta["url"], iconImage=meta["thumb"], thumbnailImage=meta["thumb"])
         item.setInfo(type='Picture', infoLabels={"Title": self.title})
+        item.setProperty('IsPlayable', 'true')
 
-        item.setProperty('Video', 'false')
-        # item.setProperty('IsPlayable', 'true')
-
-        control.player.play(meta["url"], item)
-
+        # control.player.play(meta["url"], item)
+        # playlist = xbmc.PlayList(xbmc.PLAYLIST_MUSIC)
+        # playlist.clear()
+        # playlist.add(meta["url"], item)
+        xbmc.log("SlideShow(%s)" % meta["url"])
+        # control.player.play(playlist)
+        xbmc.executebuiltin("SlideShow(%s)" % meta["url"])
+        # xbmc.executebuiltin("PlayerControl(RepeatAll)")
         time.sleep(5)
 
 
@@ -50,7 +52,11 @@ class player(xbmc.Player):
         item.setProperty("ListItem.EndTime", meta["endTime"])
         item.setProperty("totaltime", meta["endTime"])
 
-        control.player.play(meta["url"], item)
+        playlist = xbmc.PlayList(xbmc.PLAYLIST_VIDEO)
+        playlist.clear()
+        playlist.add(meta["url"], item)
+        control.player.play(playlist)
+        xbmc.executebuiltin("PlayerControl(RepeatAll)")
 
         for i in range(0, 240):
             if self.isPlayingVideo(): break

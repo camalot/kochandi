@@ -25,11 +25,11 @@ class Main:
                 continue
 
             if hasattr(post, "sub"):
-                title = "%s | images: %s" % (post["sub"], post["images"])
+                title = "%s | images: %s" % (post["sub"], post["images"] + 1)
             elif hasattr(post, "com"):
-                title = "%s | images:  %s" % (post["com"], post["images"])
+                title = "%s | images:  %s" % (post["com"], post["images"] + 1)
             else:
-                title = "%s | images: %s" % (post["filename"], post["images"])
+                title = "%s | images: %s" % (post["filename"], post["images"] + 1)
             icon = utils.get_thumb_url(self.board, post["tim"])
             utils.add_directory(title, icon, icon,
                                 "%s?action=thread&board=%s&id=%s" % (sys.argv[0], urllib.quote_plus(self.board),
