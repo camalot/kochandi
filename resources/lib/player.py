@@ -1,4 +1,4 @@
-import re, sys, json, time, xbmc
+import re, sys, json, time, xbmc, urllib
 
 import control
 # import bookmarks
@@ -21,18 +21,22 @@ class player(xbmc.Player):
         if meta["thumb"] is None:
             meta["thumb"] = "DefaultPicture.png"
         item = control.item(path=meta["url"], iconImage=meta["thumb"], thumbnailImage=meta["thumb"])
-        item.setInfo(type='Picture', infoLabels={"Title": self.title})
-        item.setProperty('IsPlayable', 'true')
+        item.setInfo(type='Pictures', infoLabels={"title": self.title, "picturepath": meta["url"]})
 
         # control.player.play(meta["url"], item)
         # playlist = xbmc.PlayList(xbmc.PLAYLIST_MUSIC)
         # playlist.clear()
         # playlist.add(meta["url"], item)
-        xbmc.log("SlideShow(%s)" % meta["url"])
+        xbmc.executebuiltin("PlayerControl(RepeatNone)")
         # control.player.play(playlist)
-        xbmc.executebuiltin("SlideShow(%s)" % meta["url"])
+
+        ss_url = '%s?action=slideshow&image_url=%s' % (sys.argv[0], urllib.quote_plus(meta["url"]))
+        xbmc.log("SlideShow(%s)" % ss_url)
+        xbmc.executebuiltin("SlideShow(%s)" % ss_url)
+
         # xbmc.executebuiltin("PlayerControl(RepeatAll)")
-        time.sleep(5)
+        # time.sleep(5)
+        return
 
 
     def run(self, meta):

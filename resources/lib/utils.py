@@ -48,7 +48,6 @@ def add_video(title, thumbnail, video_url):
     list_item = control.item(title, iconImage="DefaultVideo.png", thumbnailImage=thumbnail)
     list_item.setInfo("video", {"Title": title, "Studio": "4Chan"})
     list_item.setProperty("ListItem.IsResumable", "true")
-    list_item.setProperty("Playlist.Repeat", "Repeat One")
     list_item.setArt({"thumb": thumbnail, "fanart": thumbnail, "landscape": thumbnail, "poster": thumbnail})
     plugin_play_url = '%s?action=play&video_url=%s' % (sys.argv[0], urllib.quote_plus(video_url))
     control.addItem(handle=int(sys.argv[1]), url=plugin_play_url, listitem=list_item, isFolder=False)
@@ -56,11 +55,12 @@ def add_video(title, thumbnail, video_url):
 
 def add_image(title, thumbnail, image_url):
     list_item = control.item(title, iconImage="DefaultPicture.png", thumbnailImage=thumbnail, path=image_url)
+    list_item.setInfo(type="pictures", infoLabels={"title": title, "exif:path": image_url, "picturepath": image_url})
+    list_item.setArt({"thumb": thumbnail})
     list_item.setProperty(u'fanart_image', image_url)
-    # list_item.setInfo(type=u'picture', infoLabels={"Title": title})
-    # list_item.setProperty(u'IsPlayable', u'true')
-    plugin_play_url = '%s?action=view&image_url=%s' % (sys.argv[0], urllib.quote_plus(image_url))
-    control.addItem(handle=int(sys.argv[1]), url=plugin_play_url, listitem=list_item, isFolder=False)
+    # plugin_play_url = '%s?action=view&image_url=%s' % (sys.argv[0], urllib.quote_plus(image_url))
+    # control.addItem(handle=int(sys.argv[1]), url=plugin_play_url, listitem=list_item)
+    control.addItem(handle=int(sys.argv[1]), url=image_url, listitem=list_item)
 
 
 def add_next_page(item_url, page):

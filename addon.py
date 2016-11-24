@@ -50,6 +50,8 @@ elif action == 'thread':
     import view_thread as plugin
 elif action == 'settings':
     import settings as plugin
+elif action == 'slideshow':
+    import slideshow as plugin
 else:
     import home as plugin
 
