@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+  <string id="30000">KoChanDi</string>
+
+  <!--
+   * Settings labels
+   -->
+  <string id="30100">Version</string>
+  <string id="30101">Author</string>
+  <string id="30102">Website</string>
+
+  <string id="30500">Page %i</string>
+  <string id="30501">Search</string>
+  <string id="30502">Settings</string>
+
+  <string id="30800">General</string>
+
+  <string id="30900">Enable NSFW Boards</string>
+
+</strings>
