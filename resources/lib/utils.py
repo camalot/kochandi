@@ -33,6 +33,9 @@ image_ext = [".jpg", ".jpeg", ".png", ".bmp", ".webp"]
 
 text_green = "[B][COLOR green][UPPERCASE]%s[/UPPERCASE][/COLOR][/B]"
 
+text_board = "[B][COLOR blue][LOWERCASE]/%s/[/LOWERCASE][/COLOR] - %s[/B]"
+text_board_nsfw = "[B][COLOR red][LOWERCASE]/%s/[/LOWERCASE][/COLOR] - [COLOR red]%s[/COLOR][/B]"
+
 
 def add_directory(text, icon, thumbnail, url):
     list_item = xbmcgui.ListItem(text, iconImage=icon, thumbnailImage=thumbnail)

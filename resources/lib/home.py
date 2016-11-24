@@ -14,9 +14,14 @@ class Main:
         boards = utils.get_boards()["boards"]
         nsfw = control.setting("enable_nsfw") == 'true'
         for b in boards:
-            if not nsfw and (b["ws_board"] == 0):
+            is_nsfw = b["ws_board"] == 0
+            if not nsfw and is_nsfw:
                 continue
-            title = "/%s/ (%s)" % (b["board"], b["title"])
+            if is_nsfw:
+                title = utils.text_board_nsfw % (b["board"], b["title"])
+            else:
+                title = utils.text_board % (b["board"], b["title"])
+
             utils.add_directory(title, utils.icon_board, utils.icon_board,
                                 "%s?action=board&board=%s&total_pages=%s" % (sys.argv[0],
                                                                              urllib.quote_plus(b["board"]),
