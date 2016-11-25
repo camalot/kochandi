@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/plugin.image.kochandi.iml" filepath="$PROJECT_DIR$/.idea/plugin.image.kochandi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../plugin.image.kodur/.idea/plugin.image.kodur.iml" filepath="$PROJECT_DIR$/../plugin.image.kodur/.idea/plugin.image.kodur.iml" />
     </modules>
   </component>
 </project>

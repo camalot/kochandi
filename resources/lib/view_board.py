@@ -24,9 +24,9 @@ class Main:
             if int(post["images"]) <= 0:
                 continue
 
-            if hasattr(post, "sub"):
+            if "sub" in post:
                 title = "%s | images: %s" % (post["sub"], post["images"] + 1)
-            elif hasattr(post, "com"):
+            elif "com" in post:
                 title = "%s | images:  %s" % (post["com"], post["images"] + 1)
             else:
                 title = "%s | images: %s" % (post["filename"], post["images"] + 1)
