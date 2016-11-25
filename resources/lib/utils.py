@@ -53,14 +53,16 @@ def add_video(title, thumbnail, video_url):
     control.addItem(handle=int(sys.argv[1]), url=plugin_play_url, listitem=list_item, isFolder=False)
 
 
-def add_image(title, thumbnail, image_url):
+def add_image(title, thumbnail, image_url, slideshow=False):
     list_item = control.item(title, iconImage="DefaultPicture.png", thumbnailImage=thumbnail, path=image_url)
     list_item.setInfo(type="pictures", infoLabels={"title": title, "exif:path": image_url, "picturepath": image_url})
     list_item.setArt({"thumb": thumbnail})
     list_item.setProperty(u'fanart_image', image_url)
-    # plugin_play_url = '%s?action=view&image_url=%s' % (sys.argv[0], urllib.quote_plus(image_url))
-    # control.addItem(handle=int(sys.argv[1]), url=plugin_play_url, listitem=list_item)
-    control.addItem(handle=int(sys.argv[1]), url=image_url, listitem=list_item)
+    if not slideshow:
+        plugin_play_url = '%s?action=view&image_url=%s' % (sys.argv[0], urllib.quote_plus(image_url))
+        control.addItem(handle=int(sys.argv[1]), url=plugin_play_url, listitem=list_item)
+    else:
+        control.addItem(handle=int(sys.argv[1]), url=image_url, listitem=list_item)
 
 
 def add_next_page(item_url, page):

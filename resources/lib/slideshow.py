@@ -15,6 +15,6 @@ class Main:
         return
 
     def slideshow(self):
-        utils.add_image(self.title, self.image_url, self.image_url)
+        utils.add_image(self.title, self.image_url, self.image_url, slideshow=True)
         control.directory_end()
         return
