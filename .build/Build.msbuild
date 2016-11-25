@@ -51,11 +51,6 @@
 			OutputFilename="$(OutputPath)$(CI_PROJECT_NAME)\addon.py"
 			MatchExpression="__date__\s+=\s+&quot;[^&quot;]+&quot;"
 			ReplacementText="__date__ = &quot;$(CI_BUILD_DATE)&quot;" />
-		<ReplaceFileText
-			InputFilename="$(OutputPath)$(CI_PROJECT_NAME)\resources\lib\imgur.py"
-			OutputFilename="$(OutputPath)$(CI_PROJECT_NAME)\resources\lib\imgur.py"
-			MatchExpression="__client_id__\s+=\s+&quot;\#\{[^\}]+\}&quot;"
-			ReplacementText="__client_id__ = &quot;$(KODUR_CLIENT_ID)&quot;" />
 
 	</Target>
 
