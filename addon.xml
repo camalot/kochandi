@@ -14,4 +14,11 @@
 		<summary>A 4chan browser for Kodi</summary>
 		<description>Browse chan boards</description>
 	</extension>
+
+	<extension point="xbmc.addon.repository"
+              name="camalot's repository">
+		<info compressed="true">https://camalot.github.io/repository.camalot/addons/addons.xml</info>
+		<checksum>https://camalot.github.io/repository.camalot/addons/addons.xml.md5</checksum>
+		<datadir zip="true">https://camalot.github.io/repository.camalot/addons/plugin.image.kochandi</datadir>
+  	</extension>
 </addon>
