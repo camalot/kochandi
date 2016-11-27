@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../plugin.repository.camalot" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../plugin.video.microsoft.channel9" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../plugin.video.microsoftvirtualacademy" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../repository.camalot" vcs="Git" />
