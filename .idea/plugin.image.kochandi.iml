@@ -9,6 +9,7 @@
     <orderEntry type="module" module-name="repository.camalot" />
     <orderEntry type="module" module-name="plugin.video.microsoft.channel9" />
     <orderEntry type="module" module-name="plugin.video.microsoftvirtualacademy" />
+    <orderEntry type="module" module-name="plugin.repository.camalot" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />

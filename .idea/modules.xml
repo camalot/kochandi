@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/plugin.image.kochandi.iml" filepath="$PROJECT_DIR$/.idea/plugin.image.kochandi.iml" />
       <module fileurl="file://$PROJECT_DIR$/../plugin.image.kodur/.idea/plugin.image.kodur.iml" filepath="$PROJECT_DIR$/../plugin.image.kodur/.idea/plugin.image.kodur.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../plugin.repository.camalot/.idea/plugin.repository.camalot.iml" filepath="$PROJECT_DIR$/../plugin.repository.camalot/.idea/plugin.repository.camalot.iml" />
       <module fileurl="file://$PROJECT_DIR$/../plugin.video.microsoft.channel9/.idea/plugin.video.microsoft.channel9.iml" filepath="$PROJECT_DIR$/../plugin.video.microsoft.channel9/.idea/plugin.video.microsoft.channel9.iml" />
       <module fileurl="file://$PROJECT_DIR$/../plugin.video.microsoftvirtualacademy/.idea/plugin.video.microsoftvirtualacademy.iml" filepath="$PROJECT_DIR$/../plugin.video.microsoftvirtualacademy/.idea/plugin.video.microsoftvirtualacademy.iml" />
       <module fileurl="file://$PROJECT_DIR$/../repository.camalot/.idea/repository.camalot.iml" filepath="$PROJECT_DIR$/../repository.camalot/.idea/repository.camalot.iml" />
